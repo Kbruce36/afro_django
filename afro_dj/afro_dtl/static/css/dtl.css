@@ -16,4 +16,31 @@ header li{
     display: inline;
     padding: 0px 20px;
     font-size: 24px;
+
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+#logo {
+    color: yellow;
+}
+#reg_form{
+    width: 80%;
+    padding: 15px;
+    
+}
+
+#reg_form input{
+    width: 80%;
+    padding: 15px;
+    margin: 20px;
+    
+}
+.regdiv{
+    text-align: center;
+
 }
