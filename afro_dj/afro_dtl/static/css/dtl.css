@@ -1,0 +1,19 @@
+header{
+    background-color: #1b1464;
+    color: white;
+    min-height: 70px;
+    padding-top: 30px;
+
+
+}
+
+.navlink{
+    float: right;
+    margin-right: 35px;
+    
+}
+header li{
+    display: inline;
+    padding: 0px 20px;
+
+}
