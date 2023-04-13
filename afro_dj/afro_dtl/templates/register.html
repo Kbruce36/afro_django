@@ -26,18 +26,22 @@
                 </ul>
             </nav>
         </header>
-        <form action="" id="reg_form">
+        <form action="{% url 'registration' %}" id="reg_form">
             <div class="regdiv">
-                <select name="gender" >
+                <!-- all data captured within a form can be accessed in the views 
+                using the name of that field -->
+                <select name="gender" required>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
                 <br>
-                <input placeholder="Username" name="username" type="text">
+
+                <input placeholder="Username" name="username" type="text"
+                required>
                 <br> 
-                <input placeholder="Email" name="email" type="email"> 
+                <input placeholder="Email" name="email" type="email" required> 
                 <br>
-                <input placeholder="Password" name="password" type="password">
+                <input placeholder="Password" name="password" type="password" required>
                 <br>
                 <input placeholder="Confirm Password" required="password" type="password"> 
                 <br> 
