@@ -27,7 +27,7 @@
             </nav>
         </header>
         <form action="{% url 'registration' %}" id="reg_form" method="POST" enctype="multipart/form-data">
-            {% crsf_token %}
+            {% csrf_token %}
             <div class="regdiv">
                 <!-- all data captured within a form can be accessed in the views 
                 using the name of that field -->
@@ -36,7 +36,6 @@
                     <option value="Female">Female</option>
                 </select>
                 <br>
-
                 <input placeholder="Username" name="username" type="text"
                 required>
                 <br> 

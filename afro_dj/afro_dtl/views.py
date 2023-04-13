@@ -16,17 +16,17 @@ def register(request):
     return render(request, 'register.html')
 
 def registration(request):
-    if request == 'POST':
-        name = request.POST.get['username']
-        email = request.POST.get['email']
-        password = request.POST.get['password']
-        gender = request.POST.get['gender']
-        user_details=[
-            name,email,password,gender
+    username = request.POST['username']
+    email = request.POST['email']
+    password = request.POST['password']
+    gender = request.POST['gender']
+    user_details=[
+            username,email,password,gender
         ]
-        print(user_details)
-    else:
-        pass
+    print(user_details)
+    return render(request, 'index.html', {'username': username})
+   
+
 
 
    
