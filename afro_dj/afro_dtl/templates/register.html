@@ -26,7 +26,8 @@
                 </ul>
             </nav>
         </header>
-        <form action="{% url 'registration' %}" id="reg_form">
+        <form action="{% url 'registration' %}" id="reg_form" method="POST" enctype="multipart/form-data">
+            {% crsf_token %}
             <div class="regdiv">
                 <!-- all data captured within a form can be accessed in the views 
                 using the name of that field -->
