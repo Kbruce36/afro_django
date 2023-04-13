@@ -26,15 +26,25 @@
                 </ul>
             </nav>
         </header>
-        <div class="regdiv">
-            <form action="" id="reg_form">
-                <input placeholder="Username" name="username" type="text"> 
+        <form action="" id="reg_form">
+            <div class="regdiv">
+                <select name="gender" >
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <br>
+                <input placeholder="Username" name="username" type="text">
+                <br> 
                 <input placeholder="Email" name="email" type="email"> 
+                <br>
                 <input placeholder="Password" name="password" type="password">
-                <input placeholder="Confirm Password" required="password">  
-                <input type="submit"> 
-            </form>
-        </div>
+                <br>
+                <input placeholder="Confirm Password" required="password" type="password"> 
+                <br> 
+                <input type="submit" class="button1" title="Signup" id="signupbtn"> 
+                
+            </div>
+        </form>
         <footer></footer>
     </body>
 </html>
