@@ -45,7 +45,7 @@ def login_user(request):
         if logged_user is not None:
             #here we are logging in the user
             auth_login(request, logged_user)
-            print(user_name + " "+"Logged in successfuly")
+            print(user_name+" "+"Logged in successfuly")
             return redirect('index')
         else: 
             #here we handle a scenario where the authentication has failed

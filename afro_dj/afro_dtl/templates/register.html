@@ -14,7 +14,9 @@
 
             <nav>
                 <ul>
+                    <!-- double curly brackets are used to indicate or access variables from views -->
                     <li id='logo'>{{ pr_title }}</li>
+                    <!--  -->
                     {% if user.is_authenticated %}
                      <li class='navlink'>{{user.name}}</li>
                     {% else %}
