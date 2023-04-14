@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <style>
+        .navlink{
+            float: right;
+            color: white;
+            margin-right: 15px;
+
+        }
+        header{
+            background-color: green;
+            color: white;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        header li{
+            display: inline;
+            padding: 0px 20px;
+            font-size: 24px;
+        }
+        body{
+            background-color: ivory;
+        }
+        #regform input{
+            width: 50%;
+            padding: 15px;
+            margin: 20px;
+            
+        }
+        .formdiv{
+            text-align: center;
+        }
+        
+        .button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            color: aliceblue;
+            background-color: green;
+            font-size: 16px;
+}
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li id="logo">form</li>
+                <li class="navlink">about</li>
+                <li class="navlink">home</li>
+                <li class="navlink">contact</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="formdiv">
+        <form action="" id="regform">
+            <input placeholder="first name" name="first name" type="text">
+            <input placeholder="last name" name="last name" type="text">
+            <input placeholder="date of birth" name="date of birth" type="date">
+            <input type="submit" class="button">
+        </form>
+    </div>
+
+    
+</body>
+</html>

@@ -28,7 +28,7 @@
         </header>
         <!-- form action is the url where the form posts its data -->
         <!-- method is the type of request made by the form either post or get -->
-        <form action="" id="login_form" method="POST" enctype="multipart/form-data">
+        <form action="{% url 'login_user' %}" id="login_form" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="regdiv">
                 <!-- all data captured within a form can be accessed in the views 
