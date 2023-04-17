@@ -7,8 +7,8 @@ from django.contrib.auth.models import User
 # Create your views here.
 def index(request):
     pr_title = 'Afro-Django'
-    username = 'Mariam'
-    gender = 'Female'
+    username = 'Bruce'
+    gender = 'Male'
     return render(
         request,
         'index.html', 
