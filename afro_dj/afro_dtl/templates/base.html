@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ pr_title }}</title>
+        <link rel="stylesheet" href="{% static 'css/dtl.css' %}">
+        <script src=""></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li id='logo'>{{ pr_title }}</li>
+                    {% if user.is_authenticated %}
+                      <li class="navlink">Logout</li>
+                      <li class='navlink'></li>
+                      <li class="navlink">About</li>
+                      <li class="navlink">Home</li>
+                    {% else %}
+                     <li class="navlink">Login</li>
+                     <li class="navlink"><a href="{% url 'register' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        <div id="pagecontent">
+        {% if messages %}
+            <div id="flash_message">
+                <ul>
+                    <li class="messages">{{message}}</li>
+                </ul>
+            </div>
+        {%endif %}
+        {% block content %}
+        <!-- during inheritence this will be the only thing that changes on all the other pages.
+        this is where the content of other pages wil be fixed as the rest of the data remains constant. -->
+        {% endblock %}
+        </div>
+
+
+        <footer>
+            &copy;<b>Designed by Bruce.</b>
+        </footer>
+    </body>
+</html>
