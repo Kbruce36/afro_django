@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
-{% block content %}
+{% block content%}
 {% load static %}
 
-        <h1>{{ username }} Welcome to the {{ pr_title }}.</h1>
-        {% if gender == 'Male' %} 
-         <p>Greetings Sir.</p>
-        {% else %}
-         <P>Greetings madame.</P>
-        {% endif %}
-        {% if username == 'Bruce' %}
-         <p>Hi Bruce.</p>
-        {% elif username == 'Mariam' %}
-         <p>Hi Mariam.</p>
-        {% endif %}
+    <h1>{{ username }} Welcome to the {{ pr_title }}.</h1>
+    {% if gender == 'Male' %} 
+        <p>Greetings Sir.</p>
+    {% else %}
+        <P>Greetings madame.</P>
+    {% endif %}
+    {% if username == 'Bruce' %}
+        <p>Hi Bruce.</p>
+    {% elif username == 'Mariam' %}
+        <p>Hi Mariam.</p>
+    {% endif %}
 
 {% endblock %}

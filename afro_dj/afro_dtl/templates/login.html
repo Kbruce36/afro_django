@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-
-        <!-- form action is the url where the form posts its data -->
-        <!-- method is the type of request made by the form either post or get -->
-        <form action="{% url 'login_user' %}" id="login_form" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="regdiv">
-                <!-- all data captured within a form can be accessed in the views 
-                using the name of that field -->
-                <input placeholder="Username" name="username" type="text"
-                required>
-                <br> 
-                <input placeholder="Password" name="password" type="password" required>
-                <br> 
-                <input type="submit" class="button1" title="Login" id="signupbtn">  
-            </div>
-        </form>
+    <h1>My Custom Login Page.</h1>
+    <!-- form action is the url where the form posts its data -->
+    <!-- method is the type of request made by the form either post or get -->
+    <form action="{% url 'login_user' %}" id="login_form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="regdiv">
+            <!-- all data captured within a form can be accessed in the views 
+            using the name of that field -->
+            <input placeholder="Username" name="username" type="text"
+            required>
+            <br> 
+            <input placeholder="Password" name="password" type="password" required>
+            <br> 
+            <input type="submit" class="button1" title="Login" id="signupbtn">  
+        </div>
+    </form>
+    <br><br>
 {% endblock%}

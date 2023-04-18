@@ -55,7 +55,8 @@ header a{
 }
 #login_form{
     padding-top: 15px;
-    margin-top: 15%;
+    margin-top: 5%;
+    padding-bottom: 5%;
 }
 
 
@@ -68,4 +69,23 @@ header a{
 }
 #signupbtn{
     width: 30%;
+}
+
+footer{
+    display: flex;
+    text-align: center;
+    bottom: 0px;
+    left: 0px;
+    position:relative;
+    background-color: aliceblue;
+    height: 50px;
+    width: 100%;
+    padding: 2px;
+}
+#pagecontent h1{
+    text-align: center;
+}
+#footer_txt p{
+    text-align: center;
+    
 }
