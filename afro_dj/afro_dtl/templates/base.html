@@ -15,12 +15,12 @@
                 <ul>
                     <li id='logo'>{{ pr_title }}</li>
                     {% if user.is_authenticated %}
-                      <li class="navlink">Logout</li>
+                      <li class="navlink"><a href="{% url 'logout_user' %}"> Logout</a></li>
                       <li class='navlink'></li>
-                      <li class="navlink">About</li>
-                      <li class="navlink">Home</li>
+                      <li class="navlink"><a href="{% url 'index' %}"> About</li>
+                      <li class="navlink"><a href="{% url 'index' %}"> Home</li>
                     {% else %}
-                     <li class="navlink">Login</li>
+                     <li class="navlink"><a href="{% url 'login_page' %}">Login</a> </li>
                      <li class="navlink"><a href="{% url 'register' %}">Register</a></li>
                     {% endif %}
                 </ul>
