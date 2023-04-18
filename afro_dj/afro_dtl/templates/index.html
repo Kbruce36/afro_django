@@ -2,16 +2,20 @@
 {% block content%}
 {% load static %}
 
-    <h1>{{ username }} Welcome to the {{ pr_title }}.</h1>
+    {% if user.is_authenticated %}
+    <h1>Welcome to the {{ pr_title }} dashboard.</h1>
+
+    {% else %}
+    <h1>Hello and welcome to the {{ pr_title }} landing page.</h1>
+    {% endif %}
+
     {% if gender == 'Male' %} 
         <p>Greetings Sir.</p>
     {% else %}
         <P>Greetings madame.</P>
     {% endif %}
-    {% if username == 'Bruce' %}
-        <p>Hi Bruce.</p>
-    {% elif username == 'Mariam' %}
-        <p>Hi Mariam.</p>
+    {% if author %}
+        <p>Thank you {{author}} for writing this code.</p>
     {% endif %}
 
 {% endblock %}

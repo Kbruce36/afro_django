@@ -9,13 +9,22 @@ from django.contrib.auth.models import User
 # Create your views here.
 def index(request):
     pr_title = 'Afro-Django'
-    username = 'Bruce'
-    gender = 'Male'
-    return render(
-        request,
-        'index.html', 
-        {'pr_title': pr_title, 'username':username, 'gender':gender}
-    )
+    if request.user.is_authenticated:
+        username = request.user.username
+        return render(
+            request,
+            'index.html', 
+            {'pr_title': pr_title, 'username':username}
+        )
+    else:
+        author = 'Bruce'
+        gender = 'Male'
+        return render(
+            request,
+            'index.html', 
+            {'pr_title': pr_title, 'author':author, 'gender':gender}
+        ) 
+        
 
 def register(request):
 

@@ -17,8 +17,8 @@
                     {% if user.is_authenticated %}
                       <li class="navlink"><a href="{% url 'logout_user' %}"> Logout</a></li>
                       <li class='navlink'></li>
-                      <li class="navlink"><a href="{% url 'index' %}"> About</li>
-                      <li class="navlink"><a href="{% url 'index' %}"> Home</li>
+                      <li class="navlink"><a href="{% url 'index' %}"> About</a></li>
+                      <li class="navlink"><a href="{% url 'index' %}"> Home</a></li>
                     {% else %}
                      <li class="navlink"><a href="{% url 'login_page' %}">Login</a> </li>
                      <li class="navlink"><a href="{% url 'register' %}">Register</a></li>
@@ -27,14 +27,23 @@
             </nav>
         </header>
         <div id="pagecontent">
-        {% if messages %}
+            {% if user.is_authenticated %}
+            {% with messages='custom flash message' %}
+            
+            {% if messages %}
             <div id="flash_message">
-                <ul>
-                    <li class="messages">{{message}}</li>
-                </ul>
+                <p class="messages">{{messages}}</p>
+                <button id="close_btn">Close</button>
             </div>
-        {%endif %}
-        {% block content %}
+
+            {%endif %}
+            {% endwith %}
+
+            <h1>Mr.{{ username }} logged into {{pr_title}} successfully.</h1>
+ 
+            {% endif %}
+        
+         {% block content %}
         <!-- during inheritence this will be the only thing that changes on all the other pages.
         this is where the content of other pages wil be fixed as the rest of the data remains constant. -->
         {% endblock %}
