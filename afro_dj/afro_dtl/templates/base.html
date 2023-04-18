@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ pr_title }}</title>
         <link rel="stylesheet" href="{% static 'css/dtl.css' %}">
+        <script src="{% static 'js/dtl.js' %}"></script>
         <script src=""></script>
     </head>
     <body>
@@ -33,13 +34,13 @@
             {% if messages %}
             <div id="flash_message">
                 <p class="messages">{{messages}}</p>
-                <button id="close_btn">Close</button>
+                <button id="close_btn" onclick="hide('flash_message')">Close</button>
             </div>
 
             {%endif %}
             {% endwith %}
 
-            <h1>Mr.{{ username }} logged into {{pr_title}} successfully.</h1>
+            <h1>Mr/Mrs.{{ username }} logged into {{pr_title}} successfully.</h1>
  
             {% endif %}
         
@@ -52,4 +53,5 @@
     <footer>
         <p id="footer_txt">&copy;<b>Designed by Bruce.</b></p>
     </footer>
+
 </html>
