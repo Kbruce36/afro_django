@@ -39,10 +39,13 @@ def registration(request):
 
 
 def login_user(request):
+    #here we handle data being posted from the login form
     user_name = request.POST['username']
     pwd = request.POST['password']
+    #we check if the user already has an account in te database
     if User.objects.filter(username=user_name):
         print("This username exists.")
+        #if the account exists we login using the username and password fields
         logged_user = authenticate(request, username=user_name, password=pwd)
         if logged_user is not None:
             #here we are logging in the user
