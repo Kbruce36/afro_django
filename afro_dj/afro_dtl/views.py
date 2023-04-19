@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login as auth_login, logout as aut
 from django.contrib.auth.decorators import login_required
 from .models import User_account
 from django.contrib.auth.models import User
-
+from django.contrib import messages
 
 
 # Create your views here.
@@ -60,6 +60,7 @@ def login_user(request):
             #here we are logging in the user
             auth_login(request, logged_user)
             print(user_name+" "+"Logged in successfuly")
+            messages.success(request, 'You have logged in successfully. Welcome!')
             return redirect('index')
         else: 
             #here we handle a scenario where the authentication has failed
@@ -69,10 +70,12 @@ def login_user(request):
         return render(request, 'login.html')
     
 def login_page(request):
+
     return render(request, 'login.html')
 
 @login_required
 def logout_user(request):
     auth_logout(request)
+    messages.error(request, 'You have logged out successfully. Goodbye!')
     return redirect('login_page')
 

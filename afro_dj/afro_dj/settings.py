@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #my apps
     'afro_dtl',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [

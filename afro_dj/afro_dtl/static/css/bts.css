@@ -1,0 +1,14 @@
+
+
+#flash_message{
+    background: aliceblue;
+    width: 60%;
+    text-align: center;
+    margin:1% 20%;
+    padding-top: 5px;
+    
+
+}
+#flash_message li{
+    display: inline;
+}
