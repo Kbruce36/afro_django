@@ -17,9 +17,13 @@
                 <li id='logo' class="nav-item">{{ pr_title }}</li>
                 {% if user.is_authenticated %}
                     <li class="nav-item" ><a href="{% url 'logout_user' %}" class="nav-link"> <button class="btn btn-outline-primary btn-md">Logout</button></a></li>
-                    <li class="nav-item" ><a href="{% url 'index' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">About</button> </a></li>
                     <li class="nav-item" ><a href="{% url 'index' %}" class="nav-link"><button class="btn btn-outline-primary btn-md"> Home</button></a></li>
+                    <li class="nav-item" ><a href="{% url 'userforminfo' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">Users</button> </a></li>
+                    <li class="nav-item" ><a href="{% url 'user_form' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">form</button></a></li>
+                    
                 {% else %}
+                    <li class="nav-item" ><a href="{% url 'userforminfo' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">Users</button> </a></li>
+                    <li class="nav-item" ><a href="{% url 'user_form' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">form</button></a></li>
                     <li class="nav-item"><a href="{% url 'login_page' %}" class="nav-link"><button class="btn btn-outline-primary btn-md"> Login</button></a> </li>
                     <li class="nav-item" ><a href="{% url 'register' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">Register</button></a></li>
                 {% endif %}
@@ -44,7 +48,7 @@
             {% endif %}
 
 
-            <h1>Mr/Mrs.{{ username }} logged into {{pr_title}} successfully.</h1>
+            
         
          {% block content %}
         <!-- during inheritence this will be the only thing that changes on all the other pages.
@@ -54,7 +58,7 @@
     </body>
     <footer class="page-footer font-small blue pt-4" >
         <div class="col-md-6 col-sm-6">
-            <div class="footer-copyright text-center py-3">
+            <div class="footer-copyright  py-3">
                 <p id="footer_txt">&copy;<b>Designed by Bruce.</b></p>
             </div>
         </div>

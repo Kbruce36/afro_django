@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
-from .models import User_account
+from .models import User_account, User_form_model
 from django.contrib.auth.models import User
 from django.contrib import messages
-
-
+from .forms import User_form
 # Create your views here.
 def index(request):
     pr_title = 'Afro-Django'
@@ -79,3 +78,22 @@ def logout_user(request):
     messages.error(request, 'You have logged out successfully. Goodbye!')
     return redirect('login_page')
 
+#test view
+
+def user_form(request):    
+    form = User_form(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+        else:
+            messages.success(request, "there was an error in your submission.")
+            return redirect('user_form')
+        messages.success(request, ("your form has been submitted successfully."))  
+        #always remember to redirect to a view that handles the page and not the page
+        return redirect('userforminfo')
+    else:
+        return render(request, 'userform.html', {'form':form})
+    
+def userforminfo(request):
+    all_users = User_form_model.objects.all()
+    return render(request, 'userforminfo.html', {'all':all_users})
