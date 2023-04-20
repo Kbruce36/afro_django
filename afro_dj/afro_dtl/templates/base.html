@@ -12,56 +12,66 @@
         <script src="{% static 'js/dtl.js' %}"></script>
     </head>
     <body>
-        <div class="container-fluid">
-            <ul class="nav nav-expand-lg nav-dark bg-info mr-auto">
-                <li id='logo' class="nav-item">{{ pr_title }}</li>
-                {% if user.is_authenticated %}
-                    <li class="nav-item" ><a href="{% url 'logout_user' %}" class="nav-link"> <button class="btn btn-outline-primary btn-md">Logout</button></a></li>
-                    <li class="nav-item" ><a href="{% url 'index' %}" class="nav-link"><button class="btn btn-outline-primary btn-md"> Home</button></a></li>
-                    <li class="nav-item" ><a href="{% url 'userforminfo' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">Users</button> </a></li>
-                    <li class="nav-item" ><a href="{% url 'user_form' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">form</button></a></li>
-                    
-                {% else %}
-                    <li class="nav-item" ><a href="{% url 'userforminfo' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">Users</button> </a></li>
-                    <li class="nav-item" ><a href="{% url 'user_form' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">form</button></a></li>
-                    <li class="nav-item"><a href="{% url 'login_page' %}" class="nav-link"><button class="btn btn-outline-primary btn-md"> Login</button></a> </li>
-                    <li class="nav-item" ><a href="{% url 'register' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">Register</button></a></li>
-                {% endif %}
-            </ul>
-        </div>
-        <div id="pagecontent" class="container-fluid">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    <nav>
+                        <ul class="nav nav-expand-lg nav-dark bg-info mr-auto">
 
-
-            
-            {% if messages %}
-            <div id="flash_message" class="container-fluid">
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
-                        <p class="messages">{{message}}</p>
-                    </li>
-                    {% endfor %}
-
-                </ul>
-                <button class="btn btn-outline-danger" onclick="hide('flash_message')">Close</button>
+                        <div class="col-md-3"><li id='logo' class="nav-item">{{ pr_title }}</li></div>
+                        <div class="col-md-4"></div>
+                            {% if user.is_authenticated %}
+                                <li class="nav-item" ><a href="{% url 'logout_user' %}" class="nav-link"> <button class="btn btn-outline-primary btn-md">Logout</button></a></li>
+                                <li class="nav-item" ><a href="{% url 'index' %}" class="nav-link"><button class="btn btn-outline-primary btn-md"> Home</button></a></li>
+                                <li class="nav-item" ><a href="{% url 'userforminfo' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">Users</button> </a></li>
+                                <li class="nav-item" ><a href="{% url 'user_form' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">contact us</button></a></li>
+                            {% else %}
+                                <li class="nav-item" ><a href="{% url 'userforminfo' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">Users</button> </a></li>
+                                <li class="nav-item" ><a href="{% url 'user_form' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">form</button></a></li>
+                                <li class="nav-item"><a href="{% url 'login_page' %}" class="nav-link"><button class="btn btn-outline-primary btn-md"> Login</button></a> </li>
+                                <li class="nav-item" ><a href="{% url 'register' %}" class="nav-link"><button class="btn btn-outline-primary btn-md">Register</button></a></li>
+                            {% endif %}
+                        </div> 
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            {% endif %}
+            <div id="pagecontent" class="container-fluid">
+                {% if messages %}
+                <div id="flash_message" class="container-fluid">
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                            <p class="messages">{{message}}</p>
+                        </li>
+                        {% endfor %}
 
+                    </ul>
+                    <button class="btn btn-outline-danger" onclick="hide('flash_message')">Close</button>
+                </div>
+                {% endif %}
+                
 
+                
             
-        
-         {% block content %}
-        <!-- during inheritence this will be the only thing that changes on all the other pages.
-        this is where the content of other pages wil be fixed as the rest of the data remains constant. -->
-        {% endblock %}
+            {% block content %}
+            <!-- during inheritence this will be the only thing that changes on all the other pages.
+            this is where the content of other pages wil be fixed as the rest of the data remains constant. -->
+            {% endblock %}
+            </div>
         </div>
     </body>
-    <footer class="page-footer font-small blue pt-4" >
-        <div class="col-md-6 col-sm-6">
-            <div class="footer-copyright  py-3">
-                <p id="footer_txt">&copy;<b>Designed by Bruce.</b></p>
+    <div class="container-fluid">
+        <footer class="page-footer font-small blue" >
+            <div class="col-md-12 col-sm-12">
+                <div class="col-md-4"><b>partners</b></div>
+                <div class="col-md-4">
+                    
+                    <p id="footer_txt">&copy;<b>Designed by Bruce.</b></p>
+                    
+                </div>
+                <div class="col-md-4"><b>xsocial media</b></div>
             </div>
-        </div>
-    </footer>
-
+        </footer>
+    </div>
 </html>

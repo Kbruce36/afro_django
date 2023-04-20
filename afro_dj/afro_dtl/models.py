@@ -9,6 +9,14 @@ class User_account(models.Model):
     email = models.CharField(max_length=30)
     password = models.CharField(max_length=22)
     signup_time = models.DateTimeField(auto_now=True)
+
+#new chatbox model
+class ChatBox(models.Model):
+    messenger = models.CharField(max_length=100, blank=True)
+    message = models.CharField(max_length=200, blank=True)
+
+
+
     
 #test model
 class User_form_model(models.Model):

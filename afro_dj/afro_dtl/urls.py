@@ -10,5 +10,6 @@ urlpatterns = [
     path('logout_user', views.logout_user, name='logout_user'),
     path('user_form', views.user_form, name='user_form'),
     path('userforminfo', views.userforminfo, name='userforminfo'),
+    path('capture_message', views.capture_message, name='capture_message'),
 
 ]

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
-from .models import User_account, User_form_model
+from .models import User_account, User_form_model, ChatBox
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import User_form
@@ -97,3 +97,17 @@ def user_form(request):
 def userforminfo(request):
     all_users = User_form_model.objects.all()
     return render(request, 'userforminfo.html', {'all':all_users})
+
+
+#new message view
+def capture_message(request):
+    messenger_field = request.POST['messenger']
+    message_field = request.POST['message']
+    #we are telling our model what fields to store
+    #the model column = the variable 
+    captured_message = ChatBox(messenger=messenger_field, message=message_field)
+    #whatever has been capturd is saved within the database using the function below
+    captured_message.save()
+    #here we are retrieving the data saved in the model
+    chats = ChatBox.objects.all()
+    return render(request, 'chatbox.html', {'chats':chats})
